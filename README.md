@@ -1,5 +1,19 @@
 # Solar Eclipse Image Processor (`eclipse-processor`)
 
+---
+
+## AI Disclaimer
+This tool has been entirely vibecoded using Antigravity + Google Gemini 3.8 Flash - High reasoning. Most probably is crap, but it has helped me power through aligning 400 heavy images to facilitate merging later with Affinity Canvas. I took about 30min to align 30 images manually, I have spent around 4h vibecoding this bullcrap, worth it for me not so much for the earth's ecosystem.
+
+It's not perfect, but it gets closer than myself with less time. Runs at around 9 images/second per step, my test images being around 400 images at 21Mpx 6000px x 4000px, separated in 5 totality folders. No true benchmarks atm nor planned.
+
+(Edit) - That feeling of searchings the day after and finding that there is obviously already tools that do this. I had tried a ton of astrophotography software like PIPP, AutoStakkert!, Auto Align from Affinity Canvas / Lightroom, Siril, Sequator, all with terrible results with my terrible photos from my Fuji XE3, manual adjustment of tripod, manually made filter which I believe was wavy and wonky and an adapted (although great) 500mm f5.8 Nikon E Lens.
+Pending to try:
+ - Solar Eclipse Timeline Aligner - https://github.com/hotdogee/solar-eclipse-timelapse-aligner?st_source=ai_overview
+ - Umbra - https://umbraprocessing.com/
+
+---
+
 A high-precision, 16-bit astronomical image processing pipeline engineered for solar eclipse photography. It automates limb detection, coronal streamer measurement, sub-pixel centering, solar radius normalization, multi-point prominence field rotation alignment, and uniform square cropping—strictly preserving native **16-bit `uint16` depth** and photometric accuracy for composite HDR stacking.
 
 ---
@@ -179,10 +193,3 @@ res = transformer.transform(
 # 4. Save 16-bit uint16 result
 tifffile.imwrite("standardized_output.tif", res.img_transformed, photometric='rgb')
 ```
-
----
-
-# AI Disclaimer
-This tool has been entirely vibecoded using Antigravity + Google Gemini 3.8 Flash - High reasoning. Most probably is crap, but it has helped me power through aligning 400 heavy images to facilitate merging later with Affinity Canvas. I took about 30min to align 30 images manually, I have spent around 4h vibecoding this bullcrap, worth it for me not so much for the earth's ecosystem.
-
-It's not perfect, but it gets closer than myself with less time. Runs at around 9 images/second per step, my test images being around 400 images at 21Mpx 6000px x 4000px, separated in 5 totality folders. No true benchmarks atm nor planned.
